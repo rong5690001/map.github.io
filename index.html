@@ -1,9 +1,21 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+doctype html
+html 
+    include partial/head.jade
+    body
+        #particles-js
+            #container
+                #topnav
+                    br
+                    br
+                    span#subtitle #{config.subtitle}
+                    br
+                    br
+                    span#description #{config.description}
+                    br
+                    br
+                include partial/nav.jade
+                include partial/content.jade
+                //- include partial/footer.jade
+        script(src='/js/particles.js')
+        script(src='/js/mouseover.js')
+            
