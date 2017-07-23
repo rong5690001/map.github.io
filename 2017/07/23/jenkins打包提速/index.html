@@ -1,251 +1,34 @@
+include mixins
 
+extends partial/layout
 
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head prefix="og: http://ogp.me/ns#">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="description" content="记录成长">
-    <title>jenkins打包提速 | 陈华榕的个人博客</title>
+block site_title
+    != page.title + " · " + config.title
 
-    <!-- Open Graph -->
-    <meta name="description" content="&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x7528;jenkins&amp;#x6253;&amp;#x5305;&amp;#xFF0C;&amp;#x7ECF;&amp;#x8FC7;&amp;#x591A;&amp;#x6B21;&amp;#x8C03;&amp;#x6574;&amp;#x6253;&amp;#x5305;&amp;#x901F;&amp;#x5EA6;&amp;#x5DF2;&amp;#x7ECF;&amp;#x6BD4;&amp;#x4E4B;&amp;#x524D;&amp;#x5FEB;&amp;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jenkins打包提速">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/jenkins打包提速/index.html">
-<meta property="og:site_name" content="陈华榕的个人博客">
-<meta property="og:description" content="&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x7528;jenkins&amp;#x6253;&amp;#x5305;&amp;#xFF0C;&amp;#x7ECF;&amp;#x8FC7;&amp;#x591A;&amp;#x6B21;&amp;#x8C03;&amp;#x6574;&amp;#x6253;&amp;#x5305;&amp;#x901F;&amp;#x5EA6;&amp;#x5DF2;&amp;#x7ECF;&amp;#x6BD4;&amp;#x4E4B;&amp;#x524D;&amp;#x5FEB;&amp;">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T10:03:47.578Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jenkins打包提速">
-<meta name="twitter:description" content="&amp;#x516C;&amp;#x53F8;&amp;#x9879;&amp;#x76EE;&amp;#x7528;jenkins&amp;#x6253;&amp;#x5305;&amp;#xFF0C;&amp;#x7ECF;&amp;#x8FC7;&amp;#x591A;&amp;#x6B21;&amp;#x8C03;&amp;#x6574;&amp;#x6253;&amp;#x5305;&amp;#x901F;&amp;#x5EA6;&amp;#x5DF2;&amp;#x7ECF;&amp;#x6BD4;&amp;#x4E4B;&amp;#x524D;&amp;#x5FEB;&amp;">
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-    <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "email": "mailto:undefined",
-  "image": "undefined",
-  "name": "陈华榕",
-  "url": "http://yoursite.com"
-}
-</script>
-    <script>
-    var algoliaEnabled = false;
-    
-</script>
-
-    
-
-    
-    
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    
-    
-    
-        <!-- stylesheets list from config.yml -->
-        
-        <link rel="stylesheet" href="/css/aloha.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
-        
-    
-
-</head>
-<body id="body" style="margin-bottom: 0;" class="pushable">
-
-    <div class="ui top fixed menu">
-        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
-    </div>
-
-    <div id="menu-sidebar" class="ui left vertical sidebar menu">
-
-    <div id="sidebar-top">
-        <div class="content">
-            <h3>陈华榕的个人博客</h3>
-        </div>
-    </div>
-    <div class="ui container sidebar-card">
-    <div class="ui people shape content">
-        <div class="active side">
-            <div class="ui card">
-                <div class="image">
-                    <img class="ui medium bordered image" src="/images/avatar.jpg">
-                </div>
-                <div class="content">
-                    <a class="header">陈华榕</a>
-                    
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                        
-                    </div>
-
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-    
-    
-
-    
-
-    
-    <a href="/index.html" class="item" >
-        <i class="home icon"></i>
-        HOME
-    </a>
-
-    
-
-    
-</div>
-
-    <div class="pusher body-content">
-        <div id="content" class="ui main container">
-            <!--<div class="ui one column grid">-->
-                <!--<div class="column">-->
-                    <!--<div class="ui main container">-->
-                        <div id="post-jenkins打包提速" class="ui main container article-type-post">
-
-    
-
-    <div class="ui divided grid">
-
-        <div class="two column row" id="article-content">
-
-            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
-                
-
-<h1 class="ui header">
-    
-    jenkins打包提速
-</h1>
-
-
-
-                <div class="article-inner">
-
-                    <div class="article-entry" itemprop="articleBody">
-                        
-                        <p>&#x516C;&#x53F8;&#x9879;&#x76EE;&#x7528;jenkins&#x6253;&#x5305;&#xFF0C;&#x7ECF;&#x8FC7;&#x591A;&#x6B21;&#x8C03;&#x6574;&#x6253;&#x5305;&#x901F;&#x5EA6;&#x5DF2;&#x7ECF;&#x6BD4;&#x4E4B;&#x524D;&#x5FEB;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x6700;&#x8FD1;&#x53D1;&#x73B0;&#x8FD8;&#x6709;&#x63D0;&#x901F;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x56E0;&#x4E3A;&#x770B;&#x5230;&#x6253;&#x5305;&#x7684;log&#x5E26;&#x4E86;&#x5F88;&#x591A;&#x6D4B;&#x8BD5;&#x6A21;&#x5757;&#x7684;&#x4E1C;&#x897F;&#xFF08;&#x4E0D;&#x9700;&#x8981;&#x6253;&#x5305;&#x7684;&#x4E1C;&#x897F;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x95EE;&#x4E86;&#x4E0B;&#x5EA6;&#x5A18;&#x53D1;&#x73B0;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x6A21;&#x5757;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;clean -&gt; app:clean&#xFF09;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x6307;&#x5B9A;&#x6A21;&#x5757;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x800C;&#x4E0D;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x3002;&#x91CD;&#x65B0;&#x4FEE;&#x6539;&#x547D;&#x4EE4;&#xFF0C;&#x6253;&#x5305;&#x65F6;&#x95F4;&#x7F29;&#x77ED;&#x4E86;&#x4E09;&#x5206;&#x4E4B;&#x4E00;&#x3002;</p>
-
-                        
-                    </div>
-
-                    
-                    
-                    
-
-                    <div class="description post-description">
-    <span class="post-description-item">
-        <time datetime="2017-07-23T10:03:47.458Z" itemprop="datePublished">2017-07-23</time>
-
-    </span>
-    <span class="post-description-item">
-        
-    </span>
-</div>
-
-                </div>
-                
-                <div id="pagination" class="nav-web ui text container pagination">
-
-    <div class="ui stackable two column divided grid container">
-        <div class="row">
-            <div class="column nav-left">
-                
-
-                <a href="/2017/07/23/上传自己的库到github并作为依赖/" class="ui tiny button">
-
-                    <i class="angle left icon"></i>
-                    
-                    上传自己的库到github并作为依赖
-                    
-
-                </a>
-
-                
-            </div>
-            <div class="column nav-right">
-                
-
-                <a href="/2017/07/23/Android 搜索 把软键盘上的回车键改为搜索/" class="ui tiny button">
-                    
-                    Android 搜索 把软键盘上的回车键改为搜索
-                    
-                    <i class="angle right icon"></i></a>
-                
-            </div>
-        </div>
-    </div>
-
-</div>
-                
-            </div>
-
-            
-            <div class="three wide computer three wide tablet column">
-
-                <div class="ui sticky article-toc" id="article-toc">
-                    <!-- toc -->
-                    
-                </div>
-
-            </div>
-            
-
-        </div>
-    </div>
-</div>
-
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        </div>
-        <div class="ui vertical footer segment">
-    <div class="ui center aligned container">
-        <div class="ui inverted section divider"></div>
-        &copy; 2017 <a href="/">陈华榕</a>,
-        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
-                href="http://hexo.io/" target="_blank">Hexo</a>.
-    </div>
-</div>
-
-    </div>
-
-
-
-
-<!-- scripts list from theme config.yml -->
-
-<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-
-<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
-
-<script src="/js/semantic-ui-algolia.js"></script>
-
-<script src="/js/aloha-events.js"></script>
-
-
-
-</body>
-</html>
+block content
+  .autopagerize_page_element: .content: .post-page
+    include mixins
+    +make_post(page, true)
+    .share
+      .evernote
+        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+      .weibo
+        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+      .twitter
+        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .pagination
+      ul.clearfix
+        if prev
+          li.pre.pagbuttons
+            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
+        if next
+          li.next.pagbuttons
+            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
+    if page.comments
+        include partial/comments

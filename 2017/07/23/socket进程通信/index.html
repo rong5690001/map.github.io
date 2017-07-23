@@ -1,258 +1,34 @@
+include mixins
 
+extends partial/layout
 
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head prefix="og: http://ogp.me/ns#">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="description" content="记录成长">
-    <title>socket进程通信 | 陈华榕的个人博客</title>
+block site_title
+    != page.title + " · " + config.title
 
-    <!-- Open Graph -->
-    <meta name="description" content="socket&amp;#x662F;&amp;#x901A;&amp;#x8FC7;&amp;#x7F51;&amp;#x7EDC;&amp;#x6765;&amp;#x8FDB;&amp;#x884C;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x7684;&amp;#x3002;socket&amp;#x4E5F;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x5957;&amp;#x63A5;&amp;#x5B57;&amp;#x201D;&amp;#xF">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket进程通信">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/socket进程通信/index.html">
-<meta property="og:site_name" content="陈华榕的个人博客">
-<meta property="og:description" content="socket&amp;#x662F;&amp;#x901A;&amp;#x8FC7;&amp;#x7F51;&amp;#x7EDC;&amp;#x6765;&amp;#x8FDB;&amp;#x884C;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x7684;&amp;#x3002;socket&amp;#x4E5F;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x5957;&amp;#x63A5;&amp;#x5B57;&amp;#x201D;&amp;#xF">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T09:58:57.031Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="socket进程通信">
-<meta name="twitter:description" content="socket&amp;#x662F;&amp;#x901A;&amp;#x8FC7;&amp;#x7F51;&amp;#x7EDC;&amp;#x6765;&amp;#x8FDB;&amp;#x884C;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x7684;&amp;#x3002;socket&amp;#x4E5F;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x5957;&amp;#x63A5;&amp;#x5B57;&amp;#x201D;&amp;#xF">
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-    <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "email": "mailto:undefined",
-  "image": "undefined",
-  "name": "陈华榕",
-  "url": "http://yoursite.com"
-}
-</script>
-    <script>
-    var algoliaEnabled = false;
-    
-</script>
-
-    
-
-    
-    
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    
-    
-    
-        <!-- stylesheets list from config.yml -->
-        
-        <link rel="stylesheet" href="/css/aloha.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
-        
-    
-
-</head>
-<body id="body" style="margin-bottom: 0;" class="pushable">
-
-    <div class="ui top fixed menu">
-        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
-    </div>
-
-    <div id="menu-sidebar" class="ui left vertical sidebar menu">
-
-    <div id="sidebar-top">
-        <div class="content">
-            <h3>陈华榕的个人博客</h3>
-        </div>
-    </div>
-    <div class="ui container sidebar-card">
-    <div class="ui people shape content">
-        <div class="active side">
-            <div class="ui card">
-                <div class="image">
-                    <img class="ui medium bordered image" src="/images/avatar.jpg">
-                </div>
-                <div class="content">
-                    <a class="header">陈华榕</a>
-                    
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                        
-                    </div>
-
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-    
-    
-
-    
-
-    
-    <a href="/index.html" class="item" >
-        <i class="home icon"></i>
-        HOME
-    </a>
-
-    
-
-    
-</div>
-
-    <div class="pusher body-content">
-        <div id="content" class="ui main container">
-            <!--<div class="ui one column grid">-->
-                <!--<div class="column">-->
-                    <!--<div class="ui main container">-->
-                        <div id="post-socket进程通信" class="ui main container article-type-post">
-
-    
-
-    <div class="ui divided grid">
-
-        <div class="two column row" id="article-content">
-
-            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
-                
-
-<h1 class="ui header">
-    
-    socket进程通信
-</h1>
-
-
-
-                <div class="article-inner">
-
-                    <div class="article-entry" itemprop="articleBody">
-                        
-                        <p>socket&#x662F;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x6765;&#x8FDB;&#x884C;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x7684;&#x3002;socket&#x4E5F;&#x79F0;&#x4E3A;&#x201C;&#x5957;&#x63A5;&#x5B57;&#x201D;&#xFF0C;&#x662F;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x4E2D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5206;&#x4E3A;&#x6D41;&#x5F0F;&#x5957;&#x63A5;&#x5B57;&#x548C;&#x7528;&#x6237;&#x6570;&#x636E;&#x62A5;&#x5957;&#x63A5;&#x5B57;&#x4E24;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x63A7;&#x5236;&#x4E2D;TCP&#x548C;UDP&#x534F;&#x8BAE;&#x3002;TCP&#x534F;&#x8BAE;&#x662F;&#x9762;&#x5411;&#x8FDE;&#x63A5;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x63D0;&#x4F9B;&#x7A33;&#x5B9A;&#x7684;&#x53CC;&#x5411;&#x901A;&#x4FE1;&#x529F;&#x80FD;&#xFF0C;TCP&#x8FDE;&#x63A5;&#x7684;&#x5EFA;&#x7ACB;&#x9700;&#x8981;&#x7ECF;&#x8FC7;&#x201C;&#x7ECF;&#x8FC7;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x201D;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x8D85;&#x65F6;&#x91CD;&#x4F20;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x5177;&#x6709;&#x5F88;&#x9AD8;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3002;&#x800C;UDP&#x662F;&#x65E0;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x63D0;&#x4F9B;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x5355;&#x8EAB;&#x901A;&#x4FE1;&#x529F;&#x80FD;&#xFF0C;UDP&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x901A;&#x4FE1;&#x529F;&#x80FD;&#x3002;&#x5728;&#x6027;&#x80FD;&#x4E0A;&#xFF0C;UDP&#x5177;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6548;&#x7387;&#xFF0C;&#x5176;&#x7F3A;&#x70B9;&#x662F;&#x4E0D;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x80FD;&#x591F;&#x6B63;&#x786E;&#x4F20;&#x8F93;&#xFF0C;&#x5C24;&#x5176;&#x5728;&#x7F51;&#x7EDC;&#x62E5;&#x585E;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x804A;&#x5929;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;socket&#x6765;&#x5B9E;&#x73B0;&#x4FE1;&#x606F;&#x7684;&#x4F20;&#x8F93;&#xFF0C;socket&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x4EFB;&#x610F;&#x5B57;&#x8282;&#x6D41;&#xFF0C;&#x8FD9;&#x91CC;&#x4EC5;&#x4F20;&#x8F93;&#x6587;&#x672C;&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x8FD9;&#x662F;&#x4E00;&#x79CD;IPC&#x65B9;&#x5F0F;&#x3002;</p>
-<p>&#x9996;&#x5148;&#x8981;&#x58F0;&#x660E;&#x6743;&#x9650;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</div><div class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<p>&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x8FDC;&#x7A0B;TCP&#x670D;&#x52A1;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">public class TCPServerService extends Service {</div><div class="line"></div><div class="line">    private boolean isServiceDestoryed = false;</div><div class="line">    private String[] mDefinedMessages = new String[]{&quot;&#x4F60;&#x597D;&quot;, &quot;what&apos;s you name?&quot;, &quot;&#x6211;&#x5F88;&#x806A;&#x660E;&quot;};</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onCreate() {</div><div class="line">        new Thread(new TcpServer()).start();</div><div class="line">        super.onCreate();</div><div class="line">    }</div><div class="line"></div><div class="line">    @Nullable</div><div class="line">    @Override</div><div class="line">    public IBinder onBind(Intent intent) {</div><div class="line">        return null;</div><div class="line">    }</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onDestroy() {</div><div class="line">        isServiceDestoryed = true;</div><div class="line">        super.onDestroy();</div><div class="line">    }</div><div class="line"></div><div class="line">    private class TcpServer implements Runnable {</div><div class="line"></div><div class="line">        @Override</div><div class="line">        public void run() {</div><div class="line">            ServerSocket serverSocket = null;</div><div class="line">            try {</div><div class="line">                serverSocket = new ServerSocket(8688);</div><div class="line">            } catch (IOException e) {</div><div class="line">                System.err.println(&quot;&#x5EFA;&#x7ACB;tcp&#x670D;&#x52A1;&#x5931;&#x8D25;&#xFF0C;port:8688&quot;);</div><div class="line">                e.printStackTrace();</div><div class="line">                return;</div><div class="line">            }</div><div class="line">           /**</div><div class="line">             * &#x6B64;&#x5904;&#x5FAA;&#x73AF;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#xFF08;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5C31;&#x53EF;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;&#x53EF;&#x540C;&#x65F6;&#x548C;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#xFF09;</div><div class="line">             * &#x6BCF;&#x6B21;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;socket</div><div class="line">             */</div><div class="line">            while (!isServiceDestoryed) {</div><div class="line">                try {</div><div class="line">                    //&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;</div><div class="line">                    final Socket client = serverSocket.accept();</div><div class="line">                    System.out.println(&quot;accepted&quot;);</div><div class="line">                    new Thread() {</div><div class="line">                        @Override</div><div class="line">                        public void run() {</div><div class="line">                            try {</div><div class="line">                                responseClient(client);</div><div class="line">                            } catch (IOException e) {</div><div class="line">                                e.printStackTrace();</div><div class="line">                            }</div><div class="line">                        }</div><div class="line">                    }.start();</div><div class="line">                } catch (IOException e) {</div><div class="line">                    e.printStackTrace();</div><div class="line">                }</div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    private void responseClient(Socket client) throws IOException {</div><div class="line">        //&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;</div><div class="line">        BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));</div><div class="line">        //&#x7528;&#x4E8E;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;</div><div class="line">        PrintWriter out = new PrintWriter(new BufferedWriter(</div><div class="line">                new OutputStreamWriter(client.getOutputStream())), true);</div><div class="line">        out.print(&quot;welcome!&quot;);</div><div class="line">        while (!isServiceDestoryed) {</div><div class="line">            String str = in.readLine();</div><div class="line">            System.out.println(&quot;msg from client:&quot; + str);</div><div class="line">            if (str == null) {</div><div class="line">                //&#x5BA2;&#x6237;&#x7AEF;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;</div><div class="line">                break;</div><div class="line">            }</div><div class="line">            int i = new Random().nextInt(mDefinedMessages.length);</div><div class="line">            String msg = mDefinedMessages[i];</div><div class="line">            out.print(msg);</div><div class="line">            System.out.println(&quot;send :&quot; + msg);</div><div class="line">        }</div><div class="line"></div><div class="line">        System.out.println(&quot;client out&quot;);</div><div class="line">        //&#x5173;&#x95ED;&#x6D41;</div><div class="line">        out.close();</div><div class="line">        in.close();</div><div class="line">        client.close();</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x5BA2;&#x6237;&#x7AEF;Activity&#xFF0C;&#x5728;onCreate&#x91CC;&#x5F00;&#x6237;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x53BB;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x7AEF;socket&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x786E;&#x5B9A;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x4E86;&#x8D85;&#x65F6;&#x91CD;&#x8FDE;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x91CD;&#x8FDE;&#x7684;&#x5F00;&#x9500;&#x52A0;&#x5165;&#x4E86;&#x4F11;&#x7720;&#x673A;&#x5236;sleep&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div></pre></td><td class="code"><pre><div class="line"> package com.example.administrator.myapplication.socket;</div><div class="line"></div><div class="line">import android.content.Intent;</div><div class="line">import android.os.Handler;</div><div class="line">import android.os.Message;</div><div class="line">import android.os.SystemClock;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.text.TextUtils;</div><div class="line">import android.view.View;</div><div class="line">import android.widget.AutoCompleteTextView;</div><div class="line">import android.widget.Button;</div><div class="line">import android.widget.TextView;</div><div class="line"></div><div class="line">import com.example.administrator.myapplication.R;</div><div class="line"></div><div class="line">import java.io.BufferedReader;</div><div class="line">import java.io.BufferedWriter;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStreamReader;</div><div class="line">import java.io.OutputStreamWriter;</div><div class="line">import java.io.PrintWriter;</div><div class="line">import java.net.Socket;</div><div class="line"></div><div class="line">public class SocketActivity extends AppCompatActivity {</div><div class="line">    //&#x63A5;&#x6536;&#x5230;&#x4E86;&#x6D88;&#x606F;</div><div class="line">    private static final int MSG_RECEIVE = 1;</div><div class="line">    //&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x7AEF;</div><div class="line">    private static final int MSG_CONNECTED = 2;</div><div class="line"></div><div class="line">    private TextView msgTextView;</div><div class="line">    private AutoCompleteTextView input;</div><div class="line">    private Button sendBtn;</div><div class="line"></div><div class="line">    private PrintWriter printWriter;</div><div class="line">    private Socket mClientSocket;</div><div class="line"></div><div class="line">    private Handler handler = new Handler() {</div><div class="line">        @Override</div><div class="line">        public void handleMessage(Message msg) {</div><div class="line">            switch (msg.what) {</div><div class="line">                case MSG_RECEIVE:</div><div class="line">                    msgTextView.setText(msgTextView.getText() + &quot;\n&quot; + String.valueOf(msg.obj));</div><div class="line">                    break;</div><div class="line">                case MSG_CONNECTED:</div><div class="line">                    sendBtn.setEnabled(true);</div><div class="line">                    break;</div><div class="line">                default:</div><div class="line">                    break;</div><div class="line">            }</div><div class="line">        }</div><div class="line">    };</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) {</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_socket);</div><div class="line">        msgTextView = (TextView) findViewById(R.id.textView);</div><div class="line">        input = (AutoCompleteTextView) findViewById(R.id.input);</div><div class="line">        sendBtn = (Button) findViewById(R.id.button);</div><div class="line"></div><div class="line">        Intent service = new Intent(this, TCPServerService.class);</div><div class="line">        startService(service);</div><div class="line">        new Thread() {</div><div class="line">            @Override</div><div class="line">            public void run() {</div><div class="line">                connectTCPServer();</div><div class="line">            }</div><div class="line">        }.start();</div><div class="line">    }</div><div class="line"></div><div class="line"></div><div class="line">    private void connectTCPServer() {</div><div class="line">        Socket socket = null;</div><div class="line">        while (socket == null) {</div><div class="line">            try {</div><div class="line">                socket = new Socket(&quot;localhost&quot;, 8688);</div><div class="line">                mClientSocket = socket;</div><div class="line">                printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);</div><div class="line">                handler.sendEmptyMessage(MSG_CONNECTED);</div><div class="line">                System.out.println(&quot;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF01;&quot;);</div><div class="line">            } catch (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">                SystemClock.sleep(1000);</div><div class="line">                System.out.println(&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#xFF01;&#x91CD;&#x8BD5;&#x4E2D;&#x3002;&#x3002;&#x3002;&quot;);</div><div class="line">            }</div><div class="line">        }</div><div class="line"></div><div class="line">        try {</div><div class="line">            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));</div><div class="line">            while (!SocketActivity.this.isFinishing()){//&#x5F53;&#x524D;activity&#x6CA1;&#x6709;&#x5173;&#x95ED;</div><div class="line">                String msg = bufferedReader.readLine();</div><div class="line">                System.out.println(&quot;&#x63A5;&#x6536;:&quot; + msg);</div><div class="line">                if (msg != null) {</div><div class="line">                    handler.obtainMessage(MSG_RECEIVE, msg).sendToTarget();</div><div class="line">                }</div><div class="line">            }</div><div class="line">            System.out.println(&quot;quit...&quot;);</div><div class="line">            printWriter.close();</div><div class="line">            bufferedReader.close();</div><div class="line">            socket.close();</div><div class="line">        } catch (IOException e) {</div><div class="line">            e.printStackTrace();</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    public void onClick(View view) {</div><div class="line">        int id = view.getId();</div><div class="line">        switch (id){</div><div class="line">            case R.id.button:</div><div class="line">                final String msg = input.getText().toString();</div><div class="line">                if(!TextUtils.isEmpty(msg) &amp;&amp; printWriter != null){</div><div class="line">                    printWriter.println(msg);</div><div class="line">                    input.setText(&quot;&quot;);</div><div class="line">                    msgTextView.setText(msgTextView.getText() + &quot;\n&quot; + String.valueOf(msg));</div><div class="line">                }</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onDestroy() {</div><div class="line">        if (mClientSocket != null) {</div><div class="line">            try {</div><div class="line">                mClientSocket.shutdownInput();</div><div class="line">                mClientSocket.close();</div><div class="line">            } catch (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">        }</div><div class="line">        super.onDestroy();</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
-<p>&#x6CE8;&#x610F;&#xFF1A;socket&#x4E0D;&#x7528;&#x65F6;&#x8BB0;&#x5F97;&#x5173;&#x95ED;&#xFF01;&#xFF01;&#xFF01;</p>
-<p>&#x8FD9;&#x91CC;&#x5BA2;&#x6237;&#x7AEF;&#x6210;&#x529F;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x7AEF;&#x540E;&#xFF0C;&#x7528;while&#x5FAA;&#x73AF;&#x6765;&#x4E0D;&#x65AD;&#x53BB;&#x8BFB;&#x53D6;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x53EA;&#x6709;&#x5F53;activity&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x5E76;&#x5173;&#x95ED;socket&#x3002;</p>
-<p>&#x53C2;&#x8003;&#xFF1A;android&#x5F00;&#x53D1;&#x827A;&#x672F;&#x63A2;&#x7D22;</p>
-
-                        
-                    </div>
-
-                    
-                    
-                    
-
-                    <div class="description post-description">
-    <span class="post-description-item">
-        <time datetime="2017-07-23T09:58:56.910Z" itemprop="datePublished">2017-07-23</time>
-
-    </span>
-    <span class="post-description-item">
-        
-    </span>
-</div>
-
-                </div>
-                
-                <div id="pagination" class="nav-web ui text container pagination">
-
-    <div class="ui stackable two column divided grid container">
-        <div class="row">
-            <div class="column nav-left">
-                
-
-                <a href="/2017/07/23/contentProvider详解/" class="ui tiny button">
-
-                    <i class="angle left icon"></i>
-                    
-                    contentProvider详解
-                    
-
-                </a>
-
-                
-            </div>
-            <div class="column nav-right">
-                
-
-                <a href="/2017/07/23/maskdown/" class="ui tiny button">
-                    
-                    MarkDown
-                    
-                    <i class="angle right icon"></i></a>
-                
-            </div>
-        </div>
-    </div>
-
-</div>
-                
-            </div>
-
-            
-            <div class="three wide computer three wide tablet column">
-
-                <div class="ui sticky article-toc" id="article-toc">
-                    <!-- toc -->
-                    
-                </div>
-
-            </div>
-            
-
-        </div>
-    </div>
-</div>
-
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        </div>
-        <div class="ui vertical footer segment">
-    <div class="ui center aligned container">
-        <div class="ui inverted section divider"></div>
-        &copy; 2017 <a href="/">陈华榕</a>,
-        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
-                href="http://hexo.io/" target="_blank">Hexo</a>.
-    </div>
-</div>
-
-    </div>
-
-
-
-
-<!-- scripts list from theme config.yml -->
-
-<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-
-<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
-
-<script src="/js/semantic-ui-algolia.js"></script>
-
-<script src="/js/aloha-events.js"></script>
-
-
-
-</body>
-</html>
+block content
+  .autopagerize_page_element: .content: .post-page
+    include mixins
+    +make_post(page, true)
+    .share
+      .evernote
+        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+      .weibo
+        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+      .twitter
+        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .pagination
+      ul.clearfix
+        if prev
+          li.pre.pagbuttons
+            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
+        if next
+          li.next.pagbuttons
+            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
+    if page.comments
+        include partial/comments
