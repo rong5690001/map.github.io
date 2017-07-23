@@ -61,6 +61,40 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-添加ssh key到github并ssh的方式来连接远程仓库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/" class="article-date">
+  <time datetime="2017-07-23T08:53:28.476Z" itemprop="datePublished">2017-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>���˰��졣�������ڰ�ssh key��ӵ�git�����У�����ͨ��ssh��ʽ�Ѳֿ������˱��ء�<br>�����Ƶ���������Ҫ��������¼��¼��¼���ѡ�����</p>
+<p></p><h2>1������ssh key</h2><br>��git bash��ִ���������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure><p></p>
+<p>��������Ҫ�����������롣����</p>
+<p></p><h2>2����ssh key ��ӵ�ssh�����У���������˰��죬��󿴹ٷ��̳̽���ġ�������</h2><br>����ssh������������ ��<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># start the ssh-agent in the background</div><div class="line">eval $(ssh-agent -s)</div></pre></td></tr></table></figure><p></p>
+<p>���ssh�������У�<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
+<p>�����㱾�صĲ����������ˡ�</p>
+<p></p><h2>3���ѹ�Կ��ӵ�github�˺����ssh�б���</h2><br>ֱ����ͼ�ˣ�<br><img src="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>�򿪹�Կ���������������ӽ�ȥ�����ˡ�<br>�󹦸�ɣ�����</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/" data-id="cj5ghljea00048ouotym8dtmv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world - 副本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/23/hello-world - 副本/" class="article-date">
@@ -96,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/hello-world - 副本/" data-id="cj5gfae0i000318uo3o2v65gd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/hello-world - 副本/" data-id="cj5ghlje300018ouob04kmo76" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/My-New-Post-1/" data-id="cj5gfae0f000118uoj2nsftrz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/My-New-Post-1/" data-id="cj5ghljdz00008ouo1bo8ymk7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/My-New-Post/" data-id="cj5gfae0h000218uot1zq4g9b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/My-New-Post/" data-id="cj5ghlje600028ouo5dkdfe3b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/hello-world/" data-id="cj5gfae0a000018uo2gwjrc2a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/hello-world/" data-id="cj5ghlje800038ouotfmzwrcf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,6 +285,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/07/23/hello-world - 副本/">Hello World</a>
