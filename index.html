@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -71,31 +71,21 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/">���ssh key��github��ssh�ķ�ʽ������Զ�ֿ̲�</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>���˰��졣�������ڰ�ssh key��ӵ�git�����У�����ͨ��ssh��ʽ�Ѳֿ������˱��ء�<br>�����Ƶ���������Ҫ��������¼��¼��¼���ѡ�����</p>
-<p></p><h2>1������ssh key</h2><br>��git bash��ִ���������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure><p></p>
-<p>��������Ҫ�����������롣����</p>
-<p></p><h2>2����ssh key ��ӵ�ssh�����У���������˰��죬��󿴹ٷ��̳̽���ġ�������</h2><br>����ssh������������ ��<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># start the ssh-agent in the background</div><div class="line">eval $(ssh-agent -s)</div></pre></td></tr></table></figure><p></p>
-<p>���ssh�������У�<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
-<p>�����㱾�صĲ����������ˡ�</p>
-<p></p><h2>3���ѹ�Կ��ӵ�github�˺����ssh�б���</h2><br>ֱ����ͼ�ˣ�<br><img src="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>�򿪹�Կ���������������ӽ�ȥ�����ˡ�<br>�󹦸�ɣ�����</p>
+        <p>搞了半天。。。终于把ssh key添加到git依赖中，并且通过ssh方式把仓库拉到了本地。<br>大神绕道，本文主要是用来记录记录记录而已。。。</p>
+<p></p><h2>1、创建ssh key</h2><br>打开git bash，执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure><p></p>
+<p>接下来需要输入两遍密码。。。</p>
+<p></p><h2>2、将ssh key 添加到ssh代理中（就在这搞了半天，最后看官方教程解决的。。。）</h2><br>先启动ssh代理命令如下 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># start the ssh-agent in the background</div><div class="line">eval $(ssh-agent -s)</div></pre></td></tr></table></figure><p></p>
+<p>添加ssh到代理中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
+<p>这样你本地的操作就做完了。</p>
+<p></p><h2>3、把公钥添加到github账号里的ssh列表里</h2><br>直接上图了：<br><img src="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>打开公钥，把里面的内容添加进去就行了。<br>大功告成！！！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/" data-id="cj5ghomwi0004ysuogw2pkm73" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/" data-id="cj5ghomwi0004ysuogw2pkm73" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/hello-world - 副本/" data-id="cj5ghomwh0003ysuoriudtw0e" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/23/hello-world - 副本/" data-id="cj5ghomwh0003ysuoriudtw0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/My-New-Post-1/" data-id="cj5ghomwc0001ysuok30x1kbc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/23/My-New-Post-1/" data-id="cj5ghomwc0001ysuok30x1kbc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/My-New-Post/" data-id="cj5ghomw60000ysuopyc5jpx4" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/23/My-New-Post/" data-id="cj5ghomw60000ysuopyc5jpx4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/hello-world/" data-id="cj5ghomwf0002ysuof11pt6d7" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/23/hello-world/" data-id="cj5ghomwf0002ysuof11pt6d7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,12 +282,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/">���ssh key��github��ssh�ķ�ʽ������Զ�ֿ̲�</a>
+            <a href="/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/">(no title)</a>
           </li>
         
           <li>
@@ -329,7 +319,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
