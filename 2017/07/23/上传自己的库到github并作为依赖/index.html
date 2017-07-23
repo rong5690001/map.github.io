@@ -1,22 +1,266 @@
-doctype html
-html
-	include partial/head.jade
-	body
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>上传自己的库到github并作为依赖 | 陈华榕的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x8F6C;&amp;#x8F7D;&amp;#x81EA;&amp;#xFF1A;http://blog.csdn.net/wr751811032/article/details/53485283&amp;#x4F5C;&amp;#x8005;&amp;#xFF1A;&amp;#x7687;&amp;#x5BB6;&amp;#x8C46;&amp;#x74E3;&amp;#x9171; &amp;#x4F5C;&amp;#x4E3A;&amp;#x8BB0;&amp;#x5F55;&amp;#xFF0C;&amp;#x4EE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="上传自己的库到github并作为依赖">
+<meta property="og:url" content="http://yoursite.com/2017/07/23/上传自己的库到github并作为依赖/index.html">
+<meta property="og:site_name" content="陈华榕的个人博客">
+<meta property="og:description" content="&amp;#x8F6C;&amp;#x8F7D;&amp;#x81EA;&amp;#xFF1A;http://blog.csdn.net/wr751811032/article/details/53485283&amp;#x4F5C;&amp;#x8005;&amp;#xFF1A;&amp;#x7687;&amp;#x5BB6;&amp;#x8C46;&amp;#x74E3;&amp;#x9171; &amp;#x4F5C;&amp;#x4E3A;&amp;#x8BB0;&amp;#x5F55;&amp;#xFF0C;&amp;#x4EE">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-e72dbb2c8b60784c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-7e31a23ed45174a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-3ff4c3493b08bd37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-8fb9caa35e0fd53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-b3a7301ee21268b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-aea58f7900863a94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-c99a2aa1fa33859d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-280da6c3c01e18db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-2150a5c599de2e30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-e2d45632e6cb3048.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-3405b9b24ada68cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-23T10:04:13.619Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="上传自己的库到github并作为依赖">
+<meta name="twitter:description" content="&amp;#x8F6C;&amp;#x8F7D;&amp;#x81EA;&amp;#xFF1A;http://blog.csdn.net/wr751811032/article/details/53485283&amp;#x4F5C;&amp;#x8005;&amp;#xFF1A;&amp;#x7687;&amp;#x5BB6;&amp;#x8C46;&amp;#x74E3;&amp;#x9171; &amp;#x4F5C;&amp;#x4E3A;&amp;#x8BB0;&amp;#x5F55;&amp;#xFF0C;&amp;#x4EE">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/740891-e72dbb2c8b60784c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="陈华榕的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-		#postContainer
-			#postTop
-				h4#logo #{theme.logo}
-				br
-				br
-				h2#postTitle #{page.title}
-				br
-				span.postTime(class='fa fa-calendar' aria-hidden='true') #{date(page.date['_i'],'YYYY-M-D')}
-				each tag in page.tags.data
-					span.postTags(class='fa fa-tags'  aria-hidden='true') &nbsp;#{tag.name}
-				br
-				br
-			-str = markdown(page.content)
-			section#articleDiv!= str
-		script(src='/js/jquery.min.js')
-		script(src='/js/highlight.min.js')
-		script(src='/js/start.js')
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">陈华榕的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">非常一般人</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-上传自己的库到github并作为依赖" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/23/上传自己的库到github并作为依赖/" class="article-date">
+  <time datetime="2017-07-23T10:04:13.495Z" itemprop="datePublished">2017-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      上传自己的库到github并作为依赖
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x8F6C;&#x8F7D;&#x81EA;&#xFF1A;<a href="http://blog.csdn.net/wr751811032/article/details/53485283" target="_blank" rel="external">http://blog.csdn.net/wr751811032/article/details/53485283</a><br>&#x4F5C;&#x8005;&#xFF1A;&#x7687;&#x5BB6;&#x8C46;&#x74E3;&#x9171;</p>
+<p>&#x4F5C;&#x4E3A;&#x8BB0;&#x5F55;&#xFF0C;&#x4EE5;&#x540E;&#x65B9;&#x4FBF;&#x67E5;&#x627E;&#x3002;&#x3002;&#x3002;</p>
+<p>Android Studio&#x7684;Gradle&#x7BA1;&#x7406;&#x5E93;&#x7684;&#x529F;&#x80FD;&#x80AF;&#x5B9A;&#x8BA9;&#x4F60;&#x5370;&#x8C61;&#x6DF1;&#x523B;&#xFF0C;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x7CFB;&#x7EDF;&#x7684;&#x5E2E;&#x4F60;&#x7BA1;&#x7406;&#x81EA;&#x5DF1;&#x9879;&#x76EE;&#x4E2D;&#x4F9D;&#x8D56;&#x7684;&#x5E93;&#x3002;</p>
+<p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4F1A;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5C0F;&#x529F;&#x80FD;&#xFF0C;&#x5F88;&#x591A;&#x9879;&#x76EE;&#x4E2D;&#x90FD;&#x4F1A;&#x7528;&#x5230;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x521A;&#x521A;&#x4FEE;&#x6539;&#x4E86;&#x4E00;&#x4E2A;&#x626B;&#x63CF;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x5E93;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x5B9E;&#x73B0;&#x7AD6;&#x5C4F;&#x626B;&#x63CF;&#x3002;&#x4E24;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#x90FD;&#x4F1A;&#x7528;&#x5230;&#xFF0C;&#x90A3;&#x6211;&#x6BCF;&#x6B21;&#x8D4B;&#x503C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x8FC7;&#x53BB;&#x591A;&#x9EBB;&#x70E6;&#x554A;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x5C31;&#x60F3;&#x5230;&#x6211;&#x8FD9;&#x4E2A;&#x626B;&#x63CF;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x5C01;&#x88C5;&#x597D;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5E93;&#x8BA9;&#x5176;&#x4ED6;&#x9879;&#x76EE;&#x53BB;&#x8C03;&#x7528;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x6559;&#x4F60;&#x901A;&#x8FC7;github&#x4E0E;JitPach&#x4E00;&#x6B65;&#x6B65;&#x5B9E;&#x73B0;&#x5E93;&#x7684;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x5C31;&#x4EE5;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE; ZxingDemo&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#x6765;&#x8BB2;&#x89E3;&#x3002;</p>
+<h1>1.&#x5728;&#x672C;&#x5730;Android Studio&#x5EFA;&#x7ACB;&#x5DE5;&#x7A0B;&#x548C;&#x5E93;</h1>
+
+<p> &#x5148;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x4F5C;&#x4E3A;&#x793A;&#x4F8B;&#x6216;&#x8005;demo&#x9879;&#x76EE;&#x3002;&#x5728;&#x9879;&#x76EE;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Module&#xFF0C;Module&#x65B0;&#x5EFA;&#x4E3A; Android Library&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x8D77;&#x540D;&#x4E3A;ZxingLib&#x3002;&#x5C06;&#x81EA;&#x5DF1;&#x8981;&#x4F5C;&#x4E3A;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#x5199;&#x5728;&#x8FD9;&#x4E2A;Module&#x91CC;&#x9762;&#xFF0C;&#x6CE8;&#x610F;&#x7F16;&#x5199;&#x5E93;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E9B;&#x4E1C;&#x897F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x6BD4;&#x5982;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x5E93;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x5C31;&#x4E0D;&#x8FC7;&#x591A;&#x4ECB;&#x7ECD;&#x4E86;&#x3002;</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-e72dbb2c8b60784c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-e72dbb2c8b60784c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206131412630.jpg" class="ui centered image"></a></p>
+<p>&#x7136;&#x540E;&#x5728;ZxingDemo&#x5DE5;&#x7A0B;&#x4E2D;&#x5F15;&#x7528;&#x8BE5;&#x5E93;&#xFF0C;&#x5199;&#x51FA;demo&#x7A0B;&#x5E8F;&#x3002;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x5C31;&#x7B97;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h1>2.&#x7136;&#x540E;&#x5C06;&#x9879;&#x76EE;&#x4E0A;&#x4F20;&#x5230;github&#x4E0A;</h1>
+
+<p>&#x8FD9;&#x4E2A;&#x4E5F;&#x4F1A;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x535A;&#x5BA2;&#x53BB;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4E0A;&#x4F20;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x5C31;&#x53EA;&#x7B80;&#x5355;&#x7684;&#x63CF;&#x8FF0;&#x4E00;&#x4E0B;&#x3002;&#x524D;&#x63D0;&#x662F;&#x4F60;&#x7684;Android Studio&#x5DF2;&#x7ECF;&#x7ED1;&#x5B9A;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x4E86;Github&#x8D26;&#x53F7;&#x3002;</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-7e31a23ed45174a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-7e31a23ed45174a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206131816835.png" class="ui centered image"></a></p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-3ff4c3493b08bd37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-3ff4c3493b08bd37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206132006460.png" class="ui centered image"></a></p>
+<p>&#x586B;&#x5199;&#x5DE5;&#x7A0B;&#x540D;&#x5E76;&#x52A0;&#x4E0A;&#x63CF;&#x8FF0;&#xFF0C;&#x5206;&#x4EAB;&#x5230;Github&#x4E0A;&#x3002;&#x7136;&#x540E;&#x5728;Github&#x4E0A;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x63D0;&#x4EA4;&#x7684;&#x9879;&#x76EE;&#x4E86;&#x3002;</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-8fb9caa35e0fd53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-8fb9caa35e0fd53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206133206028.png" class="ui centered image"></a></p>
+<h1>3.&#x70B9;&#x51FB;&#x4E0A;&#x56FE;&#x4E2D; releases&#xFF0C;&#x521B;&#x5EFA;releases&#x7248;&#x672C;&#xFF0C;&#x586B;&#x5199;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF0C;&#x70B9;&#x51FB; Public&#x53D1;&#x5E03;</h1>
+
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-b3a7301ee21268b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-b3a7301ee21268b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206133356248.png" class="ui centered image"></a></p>
+<p>&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#x8868;&#x793A;&#x53D1;&#x5E03;&#x6210;&#x529F;</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-aea58f7900863a94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-aea58f7900863a94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206133631234.png" class="ui centered image"></a></p>
+<h1>4.&#x6DFB;&#x52A0;&#x5230;JitPack&#x4E0A;&#x3002;</h1>
+
+<p>&#x56E0;&#x4E3A;&#x6DFB;&#x52A0;&#x5230;JitPack&#x4E0A;&#x662F;&#x76F8;&#x5BF9;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x5BA1;&#x6838;&#xFF0C;&#x968F;&#x65F6;&#x53D1;&#x5E03;&#x968F;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C31;&#x4F7F;&#x7528;JitPack&#x4E86;&#x3002;</p>
+<p>&#x6253;&#x5F00;  <a href="https://jitpack.io/" target="_blank" rel="external">https://jitpack.io/</a></p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-c99a2aa1fa33859d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-c99a2aa1fa33859d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206134136022.png" class="ui centered image"></a></p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x8F93;&#x5165;&#x521A;&#x521A;&#x4E0A;&#x4F20;&#x7684;&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF0C;&#x70B9;&#x51FB; Look up &#x3002;&#x4F1A;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x754C;&#x9762;&#xFF0C;&#x70B9;&#x51FB; Get it &#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5E93;&#x7684;&#x751F;&#x6210;&#x3002;</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-280da6c3c01e18db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-280da6c3c01e18db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206134552519.png" class="ui centered image"></a></p>
+<h1>5.&#x5E93;&#x7684;&#x5BFC;&#x5165;</h1>
+
+<p>&#x4E0A;&#x4E00;&#x6B65;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x7F51;&#x7AD9;&#x4E0A;&#x5C31;&#x4F1A;&#x6709;&#x63D0;&#x793A;&#x5982;&#x4F55;&#x5BFC;&#x5165;&#x3002; </p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-2150a5c599de2e30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-2150a5c599de2e30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206134856020.png" class="ui centered image"></a></p>
+<p>&#x6CE8;&#x610F;&#xFF1A;maven {url &#x2018;<a href="https://jitpack.io&apos;}" target="_blank" rel="external">https://jitpack.io&apos;}</a>  &#x8FD9;&#x4E2A;&#x662F;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x63D0;&#x793A;&#x627E;&#x4E0D;&#x5230;&#x4F60;&#x6240;&#x6DFB;&#x52A0;&#x7684;&#x5E93;&#x3002;</p>
+<p>&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7B2C;&#x4E94;&#x6B65;&#x7684;&#x5185;&#x5BB9;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;&#x5BFC;&#x5165;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;&#x5B8C;&#x5168;&#x6CA1;&#x95EE;&#x9898;&#x3002;</p>
+<h1>6.&#x5E93;&#x7684;&#x66F4;&#x65B0;</h1>
+
+<p>&#x5982;&#x679C;&#x5E93;&#x6709;&#x66F4;&#x65B0;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x751F;&#x6210;&#x65B0;&#x7684;&#x5E93;&#x4F9D;&#x8D56;&#x3002;&#x9700;&#x8981;&#x628A;&#x9879;&#x76EE;&#x66F4;&#x65B0;&#x5230;Github</p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-e2d45632e6cb3048.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-e2d45632e6cb3048.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206135557572.png" class="ui centered image"></a></p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-3405b9b24ada68cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-3405b9b24ada68cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20161206135637680.png" class="ui centered image"></a></p>
+<p>&#x4E0A;&#x4F20;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x518D;&#x6309;&#x6B65;&#x9AA4;3.4.5&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5E93;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x518D;&#x6B21;&#x5BFC;&#x5165;&#x9879;&#x76EE;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x4EE5;&#x540E;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x4F1A;&#x975E;&#x5E38;&#x7684;&#x65B9;&#x4FBF;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#x5730;&#x5740;: <a href="https://github.com/751811032/ZxingLib" target="_blank" rel="external">&#x70B9;&#x51FB;&#x6253;&#x5F00;&#x94FE;&#x63A5;</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/23/上传自己的库到github并作为依赖/" data-id="cj5gk6dnk00077ouo4rumk7fv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/23/android页面跳转速度优化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          android页面跳转速度优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/23/jenkins打包提速/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jenkins打包提速</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Arkiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Siste innlegg</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/23/android页面跳转速度优化/">android页面跳转速度优化</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/上传自己的库到github并作为依赖/">上传自己的库到github并作为依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/jenkins打包提速/">jenkins打包提速</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/Android 搜索 把软键盘上的回车键改为搜索/">Android 搜索 把软键盘上的回车键改为搜索</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/android自动化测试（1）Monkey工具/">android自动化测试（1）Monkey工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 陈华榕<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
