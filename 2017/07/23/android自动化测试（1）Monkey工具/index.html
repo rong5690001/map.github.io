@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="记录成长">
+    <title>android自动化测试（1）Monkey工具 | 陈华榕的个人博客</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x4E00;&amp;#x3001;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;Monkey&amp;#xFF1F; Monkey&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x547D;&amp;#x4EE4;&amp;#x884C;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x8FD0;&amp;#x884C;&amp;#x5728;&amp;#x6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android自动化测试（1）Monkey工具">
+<meta property="og:url" content="http://yoursite.com/2017/07/23/android自动化测试（1）Monkey工具/index.html">
+<meta property="og:site_name" content="陈华榕的个人博客">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x3001;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;Monkey&amp;#xFF1F; Monkey&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x547D;&amp;#x4EE4;&amp;#x884C;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x8FD0;&amp;#x884C;&amp;#x5728;&amp;#x6">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-23T10:01:44.276Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android自动化测试（1）Monkey工具">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x3001;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;Monkey&amp;#xFF1F; Monkey&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x547D;&amp;#x4EE4;&amp;#x884C;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x8FD0;&amp;#x884C;&amp;#x5728;&amp;#x6">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "陈华榕",
+  "url": "http://yoursite.com"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>陈华榕的个人博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">陈华榕</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-android自动化测试（1）Monkey工具" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    android自动化测试（1）Monkey工具
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x4E00;&#x3001;&#x4EC0;&#x4E48;&#x662F;Monkey&#xFF1F;</p>
+<p>Monkey&#x662F;Android&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5728;&#x6A21;&#x62DF;&#x5668;&#x91CC;&#x6216;&#x5B9E;&#x9645;&#x8BBE;&#x5907;&#x4E2D;&#x3002;&#x5B83;&#x5411;&#x7CFB;&#x7EDF;&#x53D1;&#x9001;&#x4F2A;&#x968F;&#x673A;&#x7684;&#x7528;&#x6237;&#x4E8B;&#x4EF6;&#x6D41;(&#x5982;&#x6309;&#x952E;&#x8F93;&#x5165;&#x3001;&#x89E6;&#x6478;&#x5C4F;&#x8F93;&#x5165;&#x3001;&#x624B;&#x52BF;&#x8F93;&#x5165;&#x7B49;)&#xFF0C;&#x5B9E;&#x73B0;&#x5BF9;&#x6B63;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x538B;&#x529B;&#x6D4B;&#x8BD5;&#x3002;Monkey&#x6D4B;&#x8BD5;&#x662F;&#x4E00;&#x79CD;&#x4E3A;&#x4E86;&#x6D4B;&#x8BD5;&#x8F6F;&#x4EF6;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3001;&#x5065;&#x58EE;&#x6027;&#x7684;&#x5FEB;&#x901F;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;Monkey?</p>
+<p>&#x7528;Monkey&#x6765;&#x505A;&#x538B;&#x529B;&#x6D4B;&#x8BD5;&#x6BD4;&#x4EBA;&#x4E3A;&#x6765;&#x505A;&#x6548;&#x7387;&#x9AD8;&#x5F88;&#x591A;&#xFF0C;&#x5BF9;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x7684;&#x5065;&#x58EE;&#x6027;&#x6709;&#x5F88;&#x5927;&#x5E2E;&#x52A9;&#x3002;</p>
+<p>&#x4E09;&#x3001;Monkey&#x7684;&#x5C40;&#x9650;&#x6027;</p>
+<p>1&#x3001; &#x6D4B;&#x8BD5;&#x7684;&#x5BF9;&#x8C61;&#x4EC5;&#x4E3A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5305;&#xFF0C;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5C40;&#x9650;&#x6027;&#x3002;</p>
+<p>2&#x3001; Monky&#x6D4B;&#x8BD5;&#x4F7F;&#x7528;&#x7684;&#x4E8B;&#x4EF6;&#x6D41;&#x6570;&#x636E;&#x6D41;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>3&#x3001; &#x53EF;&#x5BF9;MonkeyTest&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E8B;&#x4EF6;&#x6570;&#x91CF;&#xFF0C;&#x7C7B;&#x578B;&#xFF0C;&#x9891;&#x7387;&#x7B49;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x56DB;&#x3001;Monkey&#x7684;&#x7528;&#x6CD5;</p>
+<p>&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>$ adb shell monkey [options]</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;options&#xFF0C;Monkey&#x5C06;&#x4EE5;&#x65E0;&#x53CD;&#x9988;&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#xFF0C;&#x5E76;&#x628A;&#x4E8B;&#x4EF6;&#x4EFB;&#x610F;&#x53D1;&#x9001;&#x5230;&#x5B89;&#x88C5;&#x5728;&#x76EE;&#x6807;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5305;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x4E3A;&#x5178;&#x578B;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x793A;&#x4F8B;&#xFF0C;&#x5B83;&#x542F;&#x52A8;&#x6307;&#x5B9A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x5411;&#x5176;&#x53D1;&#x9001;500&#x4E2A;&#x4F2A;&#x968F;&#x673A;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<p>$ adb shell monkey -p your.package.name -v 500</p>
+<p>&#x5176;&#x4E2D;-p&#x8868;&#x793A;&#x5BF9;&#x8C61;&#x5305; &#x2013;v &#x8868;&#x793A;&#x53CD;&#x9988;&#x4FE1;&#x606F;&#x7EA7;&#x522B;</p>
+<p>&#x4E94;&#x3001;Monkey&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+<p>1&#x3001;&#x4E5D;&#x4E2A;&#x4E8B;&#x4EF6;</p>
+<p>&#x2013;pct-touch 0</p>
+<p>&#x8C03;&#x6574;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;down-up&#x4E8B;&#x4EF6;&#xFF0C;&#x5B83;&#x53D1;&#x751F;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x67D0;&#x5355;&#x4E00;&#x4F4D;&#x7F6E;)&#xFF08;&#x2014;&#x2014;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF0C;&#x6D89;&#x53CA;down&#x3001;up&#xFF09;</p>
+<p>&#x2013;pct-motion 1</p>
+<p>&#x8C03;&#x6574;&#x52A8;&#x4F5C;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x52A8;&#x4F5C;&#x4E8B;&#x4EF6;&#x7531;&#x5C4F;&#x5E55;&#x4E0A;&#x67D0;&#x5904;&#x7684;&#x4E00;&#x4E2A;down&#x4E8B;&#x4EF6;&#x3001;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x4F2A;&#x968F;&#x673A;&#x4E8B;&#x4EF6;&#x548C;&#x4E00;&#x4E2A;up&#x4E8B;&#x4EF6;&#x7EC4;&#x6210;) &#xFF08;&#x2014;&#x2014;&#x6CE8;&#xFF1A;move&#x4E8B;&#x4EF6;&#xFF0C;&#x6D89;&#x53CA;down&#x3001;up&#x3001;move&#x4E09;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF09;</p>
+<p>&#x2013;pct-trackball 2</p>
+<p>&#x8C03;&#x6574;&#x8F68;&#x8FF9;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x8F68;&#x8FF9;&#x4E8B;&#x4EF6;&#x7531;&#x4E00;&#x4E2A;&#x6216;&#x51E0;&#x4E2A;&#x968F;&#x673A;&#x7684;&#x79FB;&#x52A8;&#x7EC4;&#x6210;&#xFF0C;&#x6709;&#x65F6;&#x8FD8;&#x4F34;&#x968F;&#x6709;&#x70B9;&#x51FB;)&#x2013;&#xFF08;&#x8F68;&#x8FF9;&#x7403;&#xFF09;</p>
+<p>&#x2013;pct-nav 3</p>
+<p>&#x8C03;&#x6574;&#x201C;&#x57FA;&#x672C;&#x201D;&#x5BFC;&#x822A;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x5BFC;&#x822A;&#x4E8B;&#x4EF6;&#x7531;&#x6765;&#x81EA;&#x65B9;&#x5411;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x7684;up/down/left/right&#x7EC4;&#x6210;)</p>
+<p>&#x2013;pct-majornav 4</p>
+<p>&#x8C03;&#x6574;&#x201C;&#x4E3B;&#x8981;&#x201D;&#x5BFC;&#x822A;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x8FD9;&#x4E9B;&#x5BFC;&#x822A;&#x4E8B;&#x4EF6;&#x901A;&#x5E38;&#x5F15;&#x53D1;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E2D;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#xFF1A;5-way&#x952E;&#x76D8;&#x7684;&#x4E2D;&#x95F4;&#x6309;&#x952E;&#x3001;&#x56DE;&#x9000;&#x6309;&#x952E;&#x3001;&#x83DC;&#x5355;&#x6309;&#x952E;)</p>
+<p>&#x2013;pct-syskeys 5</p>
+<p>&#x8C03;&#x6574;&#x201C;&#x7CFB;&#x7EDF;&#x201D;&#x6309;&#x952E;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;(&#x8FD9;&#x4E9B;&#x6309;&#x952E;&#x901A;&#x5E38;&#x88AB;&#x4FDD;&#x7559;&#xFF0C;&#x7531;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#xFF0C;&#x5982;Home&#x3001;Back&#x3001;Start Call&#x3001;End Call&#x53CA;&#x97F3;&#x91CF;&#x63A7;&#x5236;&#x952E;)</p>
+<p>&#x2013;pct-appswitch 6</p>
+<p>&#x8C03;&#x6574;&#x542F;&#x52A8;Activity&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;&#x5728;&#x968F;&#x673A;&#x95F4;&#x9694;&#x91CC;&#xFF0C;Monkey&#x5C06;&#x6267;&#x884C;&#x4E00;&#x4E2A;startActivity()&#x8C03;&#x7528;&#xFF0C;&#x4F5C;&#x4E3A;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x8986;&#x76D6;&#x5305;&#x4E2D;&#x5168;&#x90E8;Activity&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;&#xFF08;&#x4ECE;&#x4E00;&#x4E2A;Activity&#x8DF3;&#x8F6C;&#x5230;&#x53E6;&#x4E00;&#x4E2A;Activity&#xFF09;</p>
+<p>&#x2013;pct-flip 7</p>
+<p>&#x8C03;&#x6574;&#x201C;&#x952E;&#x76D8;&#x7FFB;&#x8F6C;&#x201D;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
+<p>&#x2013;pct-anyevent 8</p>
+<p>&#x8C03;&#x6574;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;&#x5B83;&#x5305;&#x7F57;&#x4E86;&#x6240;&#x6709;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#xFF1A;&#x6309;&#x952E;&#x3001;&#x5176;&#x5B83;&#x4E0D;&#x5E38;&#x7528;&#x7684;&#x8BBE;&#x5907;&#x6309;&#x94AE;&#x3001;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x7EA2;&#x8272;&#x7684;&#x6570;&#x5B57;&#x5BF9;&#x5E94;&#x4E0B;&#x9762;&#x767E;&#x5206;&#x6BD4;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x5B57;&#x3002;&#x6BD4;&#x5982;&#x4E0B;&#x56FE;&#x4E2D;0&#xFF1A;15.0%&#xFF0C;&#x8868;&#x793A;&#x5206;&#x914D;&#x2013;pct-touch&#x4E8B;&#x4EF6;15%&#x3002;&#x6D4B;&#x8BD5;100&#x6B21;&#x5206;&#x914D;15&#x6B21;&#x6D4B;&#x8BD5;down-up&#x3002;</p>
+<p>2&#x3001;&#x767E;&#x5206;&#x6BD4;&#x63A7;&#x5236;</p>
+<p>&#x5982;&#x679C;&#x5728;monkey&#x53C2;&#x6570;&#x4E2D;&#x4E0D;&#x6307;&#x5B9A;&#x4E0A;&#x8FF0;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E9B;&#x52A8;&#x4F5C;&#x90FD;&#x662F;&#x968F;&#x673A;&#x5206;&#x914D;&#x7684;&#xFF0C;9&#x4E2A;&#x52A8;&#x4F5C;&#x5176;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x5206;&#x914D;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x4E4B;&#x548C;&#x4E3A;100%&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;&#x9009;&#x9879;&#x6765;&#x63A7;&#x5236;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x8FDB;&#x800C;&#x53EF;&#x4EE5;&#x5C06;&#x64CD;&#x4F5C;&#x9650;&#x5236;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x4E0D;&#x52A0;&#x52A8;&#x4F5C;&#x767E;&#x5206;&#x6BD4;&#x63A7;&#x5236;&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5206;&#x914D;&#x4E8B;&#x4EF6;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x60C5;&#x51B5;</p>
+<p>&#x547D;&#x4EE4;&#xFF1A;adb shell monkey -v -p your.www.com 500</p>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p>&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6307;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x63A7;&#x5236;&#x4E8B;&#x4EF6;&#x767E;&#x5206;&#x6BD4;&#x4E4B;&#x540E;&#x7684;&#x60C5;&#x51B5;</p>
+<p>&#x547D;&#x4EE4;&#xFF1A;adb shell monkey -v -p your.www.com &#x2013;pct-anyevent 100 500</p>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x2013;pct-anyevent 100&#x8868;&#x660E;pct-anyevent&#x6240;&#x4EE3;&#x8868;&#x7684;&#x4E8B;&#x4EF6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x4E3A;100%&#x3002;</p>
+<p>&#x516D;&#x3001;&#x7EA6;&#x675F;&#x9650;&#x5236;&#x53CA;&#x786E;&#x5B9A;&#x5BF9;&#x5E94;&#x5305;&#x540D;</p>
+<p>1&#x3001;&#x7EA6;&#x675F;&#x9650;&#x5236;</p>
+<p>-p</p>
+<p>1&#x4E2A;-p&#x9009;&#x9879;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5305;&#x3002;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x5305;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x591A;&#x4E2A;-p&#x9009;&#x9879;</p>
+<p>2&#x3001;&#x786E;&#x5B9A;&#x6D4B;&#x8BD5;&#x5305;&#x540D;</p>
+<p>&#x5229;&#x7528;monkey&#x6D4B;&#x8BD5;&#xFF0C;&#x901A;&#x8FC7;-p&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;Emulator&#x4E2D;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x540D;&#x3002;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>a&#x3001;&#x5728;Eclipse&#x4E2D;&#x6253;&#x5F00;&#x6B32;&#x6D4B;&#x8BD5;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5E76;&#x5728;&#x6A21;&#x62DF;&#x5668;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x4ED6;&#x7684;APK&#x5E94;&#x8BE5;&#x52A0;&#x8F7D;&#x5230;&#x4E86;Emulator&#xFF08;&#x8BD1;&#xFF1A;&#x4EFF;&#x771F;&#x5668;&#x3001;&#x6A21;&#x62DF;&#x5668;&#xFF09;&#x4E0A;&#xFF08;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x6A21;&#x62DF;&#x5668;&#x3001;&#x5B89;&#x88C5;&#x3001;&#x5220;&#x9664;apk</p>
+<p>&#x542F;&#x52A8;&#x6A21;&#x62DF;&#x5668;&#xFF1A;emulator -avd testtest&#x4E3A;&#x6A21;&#x62DF;&#x5668;&#x540D;&#x79F0;</p>
+<p>&#x5B89;&#x88C5;&#xFF1A;adb install c:/xxx.apk</p>
+<p>&#x5220;&#x9664;&#xFF1A;adb uninstall apk&#x7684;&#x5305;&#x540D;</p>
+<p>&#xFF09;</p>
+<p>b&#x3001;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;adb shell</p>
+<p>c&#x3001;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5305;&#x90FD;&#x5728;data&#x76EE;&#x5F55;&#x4E2D;&#x7684;data&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;cd data/data&#x8FDB;&#x5165;&#x76EE;&#x6807;data&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;ls&#xFF0C;&#x53EF;&#x627E;&#x5230;&#x521A;&#x624D;&#x52A0;&#x8F7D;&#x9879;&#x76EE;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5305;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p>&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x540D;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;monkey&#x547D;&#x4EE4;&#x6765;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x4E86;&#x3002;&#x4F8B;&#x5982;&#xFF1A;adb shell monkey -v -p your.www.com 500</p>
+<p>&#x968F;&#x4FBF;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x6700;&#x540E;&#x7684;500&#xFF0C;&#x8868;&#x793A;&#x6D4B;&#x8BD5;&#x89E6;&#x53D1;500&#x4E2A;&#x4E8B;&#x4EF6;&#xFF08;500&#x4E2A;&#x4E8B;&#x4EF6;&#x8981;&#x6309;&#x6BD4;&#x4F8B;&#x5206;&#x644A;&#x5230;9&#x4E2A;&#x4E8B;&#x4EF6;&#x5F53;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x4EF6;&#x6BD4;&#x4F8B;&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x8BF4;&#x8FC7;&#x4E86;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x4E8B;&#x4EF6;&#x4E4B;&#x95F4;&#x63D2;&#x5165;&#x5EF6;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#xFF1A;&#x2013;throttle 5000 &#x8FD9;&#x91CC;&#x7684;5000&#x4E3A;&#x6BEB;&#x79D2;&#x5355;&#x4F4D;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;monkey&#x7684;&#x6267;&#x884C;&#x901F;&#x5EA6;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x8BE5;&#x9009;&#x9879;&#xFF0C;Monkey&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x5EF6;&#x8FDF;&#xFF0C;&#x4E8B;&#x4EF6;&#x5C06;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x7684;&#x88AB;&#x4EA7;&#x751F;&#x3002;</p>
+<p>-s &#x4F2A;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;&#x7684;seed&#x503C;&#x3002;&#x5982;&#x679C;&#x7528;&#x76F8;&#x540C;&#x7684;seed&#x503C;&#x518D;&#x6B21;&#x8FD0;&#x884C;monkey&#xFF0C;&#x5B83;&#x5C06;&#x751F;&#x6210;&#x76F8;&#x540C;&#x7684;&#x4E8B;&#x4EF6;&#x5E8F;&#x5217;&#xFF0C;&#x5BF9;9&#x4E2A;&#x4E8B;&#x4EF6;&#x5206;&#x914D;&#x76F8;&#x540C;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
+<p>-v &#x547D;&#x4EE4;&#x884C;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;-v&#x5C06;&#x589E;&#x52A0;&#x53CD;&#x9988;&#x4FE1;&#x606F;&#x7684;&#x7EA7;&#x522B;&#x3002;</p>
+<p>&#x81F3;&#x4E8E;&#x5176;&#x5B83;&#x7684;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x767E;&#x5EA6;&#x4E00;&#x4E0B;&#x5427;&#xFF0C;&#x6682;&#x65F6;&#x5148;&#x5199;&#x5230;&#x8FD9;&#x91CC;&#x3002;</p>
+<p>&#x4E03;&#x3001;&#x5728;monkey&#x6D4B;&#x8BD5;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x7EC4;&#x5408;</p>
+<p>1&#x3001;monkey -p com.yourpackage -v 500 &#x7B80;&#x5355;&#x7684;&#x8F93;&#x51FA;&#x6D4B;&#x8BD5;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>2&#x3001;monkey -p com.yourpackage -v -v -v 500  &#x4EE5;&#x6DF1;&#x5EA6;&#x4E3A;&#x4E09;&#x7EA7;&#x8F93;&#x51FA;&#x6D4B;&#x8BD5;&#x4FE1;&#x606F;&#x3002;</p>
+<p>3&#x3001;monkey -p com.yourpackage &#x2013;port &#x7AEF;&#x53E3;&#x53F7; -v &#x4E3A;&#x6D4B;&#x8BD5;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x4E13;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x53EA;&#x80FD;&#x8F93;&#x51FA;&#x8DF3;&#x8F6C;&#x7684;&#x4FE1;&#x606F;&#x53CA;&#x6709;&#x9519;&#x8BEF;&#x65F6;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;</p>
+<p>4&#x3001;monkey -p com.yourpackage -s &#x6570;&#x5B57; -v 500 &#x4E3A;&#x968F;&#x673A;&#x6570;&#x7684;&#x4E8B;&#x4EF6;&#x5E8F;&#x5217;&#x5B9A;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x82E5;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x4E0B;&#x6B21;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x540C;&#x6837;&#x7684;&#x7CFB;&#x5217;&#x8FDB;&#x884C;&#x6392;&#x9519;&#x3002;</p>
+<p>5&#x3001;monkey -p com.yourpackage -v &#x2013;throttle 3000 500 &#x4E3A;&#x6BCF;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x6709;&#x6548;&#x7684;&#x4E8B;&#x4EF6;&#x540E;&#x4F11;&#x7720;3000&#x6BEB;&#x79D2;&#x3002;</p>
+<p>&#x516B;&#x3001;&#x8BD5;&#x4F8B;</p>
+<p>&#x5728;android studio terminal&#x4E2D;&#x8F93;&#x5165;abd ps &#x5217;&#x51FA;&#x624B;&#x673A;&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x5217;&#x8868;(&#x5B89;&#x88C5;&#x65F6;&#x5305;&#x540D;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;)</p>
+<p>&#x7528;&#x547D;&#x4EE4;$ adb shell monkey -p your.package.name -v 500&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;</p>
+<p>&#x4E5D;&#x3001;&#x5173;&#x4E8E;Monkey&#x6D4B;&#x8BD5;&#x7684;&#x505C;&#x6B62;&#x6761;&#x4EF6;</p>
+<p>Monkey Test&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5728;&#x4E0B;&#x5217;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x81EA;&#x52A8;&#x505C;&#x6B62;&#xFF1A;</p>
+<p>1&#x3001;&#x5982;&#x679C;&#x9650;&#x5B9A;&#x4E86;Monkey&#x8FD0;&#x884C;&#x5728;&#x4E00;&#x4E2A;&#x6216;&#x51E0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x5305;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4F1A;&#x76D1;&#x6D4B;&#x8BD5;&#x56FE;&#x8F6C;&#x5230;&#x5176;&#x5B83;&#x5305;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x963B;&#x6B62;&#x3002;</p>
+<p>2&#x3001;&#x5982;&#x679C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x6216;&#x63A5;&#x6536;&#x5230;&#x4EFB;&#x4F55;&#x5931;&#x63A7;&#x5F02;&#x5E38;&#xFF0C;Monkey&#x5C06;&#x505C;&#x6B62;&#x5E76;&#x62A5;&#x9519;&#x3002;</p>
+<p>3&#x3001;&#x5982;&#x679C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EA7;&#x751F;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0D;&#x54CD;&#x5E94;(application not responding)&#x7684;&#x9519;&#x8BEF;&#xFF0C;Monkey&#x5C06;&#x4F1A;&#x505C;&#x6B62;&#x5E76;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x5E76;&#x4E14;&#x4E0D;&#x540C;&#x8BBE;&#x5B9A;&#x4E0B;&#x7684;Monkey&#x6D4B;&#x8BD5;&#x624D;&#x7B97;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7A33;&#x5B9A;&#x6027;&#x8DB3;&#x591F;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-07-23T10:01:44.158Z" itemprop="datePublished">2017-07-23</time>
+
+    </span>
+    <span class="post-description-item">
+        
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/07/23/Android 搜索 把软键盘上的回车键改为搜索/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    Android 搜索 把软键盘上的回车键改为搜索
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/07/23/自定义view基础知识/" class="ui tiny button">
+                    
+                    自定义view基础知识
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">陈华榕</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
