@@ -9,19 +9,19 @@
     <title>添加ssh key到github并ssh的方式来连接远程仓库 | 陈华榕的个人博客</title>
 
     <!-- Open Graph -->
-    <meta name="description" content="搞了半天。。。终于把ssh key添加到git依赖中，并且通过ssh方式把仓库拉到了本地。大神绕道，本文主要是用来记录记录记录而已。。。 1、创建ssh key打开git bash，执行以下命令：1ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 接下来需要输入两遍密码。。。 2、将ssh key 添加到ssh代理中（就">
+    <meta name="description" content="&amp;#x641E;&amp;#x4E86;&amp;#x534A;&amp;#x5929;&amp;#x3002;&amp;#x3002;&amp;#x3002;&amp;#x7EC8;&amp;#x4E8E;&amp;#x628A;ssh key&amp;#x6DFB;&amp;#x52A0;&amp;#x5230;git&amp;#x4F9D;&amp;#x8D56;&amp;#x4E2D;&amp;#xFF0C;&amp;#x5E76;&amp;#x4E14;&amp;#x901A;&amp;#x8FC7;ssh&amp;#x65B9;&amp;#x5F0F;&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="添加ssh key到github并ssh的方式来连接远程仓库">
 <meta property="og:url" content="http://yoursite.com/2017/07/23/添加ssh key到github并ssh的方式来连接远程仓库/index.html">
 <meta property="og:site_name" content="陈华榕的个人博客">
-<meta property="og:description" content="搞了半天。。。终于把ssh key添加到git依赖中，并且通过ssh方式把仓库拉到了本地。大神绕道，本文主要是用来记录记录记录而已。。。 1、创建ssh key打开git bash，执行以下命令：1ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 接下来需要输入两遍密码。。。 2、将ssh key 添加到ssh代理中（就">
+<meta property="og:description" content="&amp;#x641E;&amp;#x4E86;&amp;#x534A;&amp;#x5929;&amp;#x3002;&amp;#x3002;&amp;#x3002;&amp;#x7EC8;&amp;#x4E8E;&amp;#x628A;ssh key&amp;#x6DFB;&amp;#x52A0;&amp;#x5230;git&amp;#x4F9D;&amp;#x8D56;&amp;#x4E2D;&amp;#xFF0C;&amp;#x5E76;&amp;#x4E14;&amp;#x901A;&amp;#x8FC7;ssh&amp;#x65B9;&amp;#x5F0F;&amp;#x">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-07-23T09:27:36.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="添加ssh key到github并ssh的方式来连接远程仓库">
-<meta name="twitter:description" content="搞了半天。。。终于把ssh key添加到git依赖中，并且通过ssh方式把仓库拉到了本地。大神绕道，本文主要是用来记录记录记录而已。。。 1、创建ssh key打开git bash，执行以下命令：1ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 接下来需要输入两遍密码。。。 2、将ssh key 添加到ssh代理中（就">
+<meta name="twitter:description" content="&amp;#x641E;&amp;#x4E86;&amp;#x534A;&amp;#x5929;&amp;#x3002;&amp;#x3002;&amp;#x3002;&amp;#x7EC8;&amp;#x4E8E;&amp;#x628A;ssh key&amp;#x6DFB;&amp;#x52A0;&amp;#x5230;git&amp;#x4F9D;&amp;#x8D56;&amp;#x4E2D;&amp;#xFF0C;&amp;#x5E76;&amp;#x4E14;&amp;#x901A;&amp;#x8FC7;ssh&amp;#x65B9;&amp;#x5F0F;&amp;#x">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
     <script type="application/ld+json">
@@ -109,7 +109,7 @@
     
     <a href="/index.html" class="item" >
         <i class="home icon"></i>
-        首页
+        HOME
     </a>
 
     
@@ -144,14 +144,14 @@
 
                     <div class="article-entry" itemprop="articleBody">
                         
-                        <p>搞了半天。。。终于把ssh key添加到git依赖中，并且通过ssh方式把仓库拉到了本地。<br>大神绕道，本文主要是用来记录记录记录而已。。。</p>
-<p></p><h2>1、创建ssh key</h2><br>打开git bash，执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure><p></p>
-<p>接下来需要输入两遍密码。。。</p>
-<p></p><h2>2、将ssh key 添加到ssh代理中（就在这搞了半天，最后看官方教程解决的。。。）</h2><br>先启动ssh代理命令如下 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># start the ssh-agent in the background</div><div class="line">eval $(ssh-agent -s)</div></pre></td></tr></table></figure><p></p>
-<p>添加ssh到代理中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
-<p>这样你本地的操作就做完了。</p>
-<p></p><h2>3、把公钥添加到github账号里的ssh列表里</h2><br>直接上图了：<br><img src="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>打开公钥，把里面的内容添加进去就行了。<br>大功告成！！！</p>
+                        <p>&#x641E;&#x4E86;&#x534A;&#x5929;&#x3002;&#x3002;&#x3002;&#x7EC8;&#x4E8E;&#x628A;ssh key&#x6DFB;&#x52A0;&#x5230;git&#x4F9D;&#x8D56;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;ssh&#x65B9;&#x5F0F;&#x628A;&#x4ED3;&#x5E93;&#x62C9;&#x5230;&#x4E86;&#x672C;&#x5730;&#x3002;<br>&#x5927;&#x795E;&#x7ED5;&#x9053;&#xFF0C;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x8BB0;&#x5F55;&#x8BB0;&#x5F55;&#x800C;&#x5DF2;&#x3002;&#x3002;&#x3002;</p>
+<p></p><h2>1&#x3001;&#x521B;&#x5EFA;ssh key</h2><br>&#x6253;&#x5F00;git bash&#xFF0C;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure><p></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x9700;&#x8981;&#x8F93;&#x5165;&#x4E24;&#x904D;&#x5BC6;&#x7801;&#x3002;&#x3002;&#x3002;</p>
+<p></p><h2>2&#x3001;&#x5C06;ssh key &#x6DFB;&#x52A0;&#x5230;ssh&#x4EE3;&#x7406;&#x4E2D;&#xFF08;&#x5C31;&#x5728;&#x8FD9;&#x641E;&#x4E86;&#x534A;&#x5929;&#xFF0C;&#x6700;&#x540E;&#x770B;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#x89E3;&#x51B3;&#x7684;&#x3002;&#x3002;&#x3002;&#xFF09;</h2><br>&#x5148;&#x542F;&#x52A8;ssh&#x4EE3;&#x7406;&#x547D;&#x4EE4;&#x5982;&#x4E0B; &#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># start the ssh-agent in the background</div><div class="line">eval $(ssh-agent -s)</div></pre></td></tr></table></figure><p></p>
+<p>&#x6DFB;&#x52A0;ssh&#x5230;&#x4EE3;&#x7406;&#x4E2D;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x6837;&#x4F60;&#x672C;&#x5730;&#x7684;&#x64CD;&#x4F5C;&#x5C31;&#x505A;&#x5B8C;&#x4E86;&#x3002;</p>
+<p></p><h2>3&#x3001;&#x628A;&#x516C;&#x94A5;&#x6DFB;&#x52A0;&#x5230;github&#x8D26;&#x53F7;&#x91CC;&#x7684;ssh&#x5217;&#x8868;&#x91CC;</h2><br>&#x76F4;&#x63A5;&#x4E0A;&#x56FE;&#x4E86;&#xFF1A;<br><img src="http://upload-images.jianshu.io/upload_images/740891-2b5ae57fc12345e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
+<p><a class="magnific-img" href="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/740891-5be7d1b262d8c624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" class="ui centered image"></a><br>&#x6253;&#x5F00;&#x516C;&#x94A5;&#xFF0C;&#x628A;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6DFB;&#x52A0;&#x8FDB;&#x53BB;&#x5C31;&#x884C;&#x4E86;&#x3002;<br>&#x5927;&#x529F;&#x544A;&#x6210;&#xFF01;&#xFF01;&#xFF01;</p>
 
                         
                     </div>
@@ -193,7 +193,7 @@
             <div class="column nav-right">
                 
 
-                <a class="ui tiny button disabled">下一篇<i class="angle right icon"></i></a>
+                <a class="ui tiny button disabled">Next<i class="angle right icon"></i></a>
 
                 
             </div>
