@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="记录成长">
+    <title>activity启动模式 | 陈华榕的个人博客</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="activity&amp;#x7684;&amp;#x542F;&amp;#x52A8;&amp;#x6A21;&amp;#x5F0F;&amp;#x6709;&amp;#x56DB;&amp;#x79CD;standard&amp;#x3001;singleTop&amp;#x3001;singleTask&amp;#x3001;singleInstance&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x5BF9;&amp;#x6808;&amp;#x7684;&amp;#x6982;&amp;#x5FF5">
+<meta name="keywords" content="安卓,学习,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="activity启动模式">
+<meta property="og:url" content="http://yoursite.com/2017/08/21/activity启动模式/index.html">
+<meta property="og:site_name" content="陈华榕的个人博客">
+<meta property="og:description" content="activity&amp;#x7684;&amp;#x542F;&amp;#x52A8;&amp;#x6A21;&amp;#x5F0F;&amp;#x6709;&amp;#x56DB;&amp;#x79CD;standard&amp;#x3001;singleTop&amp;#x3001;singleTask&amp;#x3001;singleInstance&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x5BF9;&amp;#x6808;&amp;#x7684;&amp;#x6982;&amp;#x5FF5">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-21T15:07:27.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="activity启动模式">
+<meta name="twitter:description" content="activity&amp;#x7684;&amp;#x542F;&amp;#x52A8;&amp;#x6A21;&amp;#x5F0F;&amp;#x6709;&amp;#x56DB;&amp;#x79CD;standard&amp;#x3001;singleTop&amp;#x3001;singleTask&amp;#x3001;singleInstance&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x5BF9;&amp;#x6808;&amp;#x7684;&amp;#x6982;&amp;#x5FF5">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "陈华榕",
+  "url": "http://yoursite.com"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>陈华榕的个人博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">陈华榕</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-activity启动模式" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    activity启动模式
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>activity&#x7684;&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x6709;&#x56DB;&#x79CD;standard&#x3001;singleTop&#x3001;singleTask&#x3001;singleInstance&#x3002;<br>&#x5982;&#x679C;&#x5BF9;&#x6808;&#x7684;&#x6982;&#x5FF5;&#x7406;&#x89E3;&#x7684;&#x8BDD;&#x518D;&#x6765;&#x770B;&#x8FD9;&#x56DB;&#x4E2A;&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x4F1A;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#xFF0C;&#x7531;&#x5176;&#x662F;singleTask&#x548C;singleTop<br>&#x9700;&#x6C42;&#x4EFB;&#x52A1;&#x6808;&#xFF1A;&#x542F;&#x52A8;&#x5B83;&#x7684;activity&#x7684;&#x4EFB;&#x52A1;&#x6808;&#x6216;&#x8005;&#x5B83;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x6808;&#x3002;<br>activity&#x6307;&#x5B9A;&#x4EFB;&#x52A1;&#x6808;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;taskAffinity&#x6807;&#x7B7E;&#x53BB;&#x6307;&#x5B9A;&#x4EFB;&#x52A1;&#x6808;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x90A3;&#x4E48;&#x9ED8;&#x8BA4;&#x4E3A;&#x542F;&#x52A8;&#x5B83;&#x7684;activity&#x6240;&#x5728;&#x7684;&#x4EFB;&#x52A1;&#x6808;</p>
+<h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h3><p>standard&#x6A21;&#x5F0F;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#xFF0C;&#x542F;&#x52A8;&#x8BE5;&#x6A21;&#x5F0F;&#x4E0B;activity&#x4F1A;&#x5728;&#x9700;&#x6C42;&#x4EFB;&#x52A1;&#x6808;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;&#x5BF9;&#xFF01;&#xFF01;&#xFF01;&#xFF01;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x5B83;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#xFF0C;activity&#x4F1A;&#x6267;&#x884C;&#x6807;&#x51C6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;onCreate&#x3001;onStart&#x3001;onResume&#x3002;</p>
+<h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>singleTop&#x6A21;&#x5F0F;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x68C0;&#x67E5;&#x9700;&#x6C42;&#x4EFB;&#x52A1;&#x6808;&#x6808;&#x9876;&#x7684;activity&#x662F;&#x5426;&#x4E3A;&#x8981;&#x542F;&#x52A8;&#x7684;activity&#x5982;&#x679C;&#x662F;&#x5219;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x800C;&#x662F;&#x53D6;&#x6808;&#x9876;activity&#x7136;&#x540E;&#x6267;&#x884C;onNewIntent&#x548C;onResume&#x65B9;&#x6CD5;&#x3002;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;activity&#x7684;onCreate&#x548C;onStart&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x91CD;&#x65B0;&#x521B;&#x5EFA;activity&#x3002;&#x5982;&#x679C;&#x6808;&#x9876;&#x7684;acitivty&#x4E0D;&#x662F;&#x8981;&#x542F;&#x52A8;&#x7684;acitivty&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;activity&#x538B;&#x5165;&#x6808;&#x9876;&#x4E2D;&#x3002;</p>
+<h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>singleTask&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x662F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x3002;&#x56E0;&#x4E3A;&#x81EA;&#x5E26;clearTop&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x81EA;&#x5E26;clearTop&#xFF1F;&#x4E3E;&#x4E2A;&#x6817;&#x5B50;&#xFF0C;ABCD&#x56DB;&#x4E2A;activity&#xFF0C;D&#x5728;&#x6808;&#x9876;&#xFF0C;&#x73B0;&#x5728;&#x60F3;&#x628A;B&#x79FB;&#x52A8;&#x5230;&#x6808;&#x90A3;&#x5C31;&#x9700;&#x8981;&#x628A;CD&#x79FB;&#x5165;&#x6808;&#xFF0C;&#x6240;&#x4EE5;singleTask&#x81EA;&#x5E26;clearTop&#x3002;singleTask&#x91CC;&#x7684;single&#x7684;&#x6982;&#x5FF5;&#x5BF9;&#x5E94;&#x7684;&#x4E5F;&#x662F;&#x8DDF;&#x524D;&#x9762;&#x4E24;&#x4E2A;&#x4E00;&#x6837;&#x662F;&#x9700;&#x6C42;&#x4EFB;&#x52A1;&#x6808;&#x4E2D;&#x7684;single&#x3002;&#x4F8B;&#x5982;&#x6709;&#x4E24;&#x4E2A;&#x4EFB;&#x52A1;&#x6808;task1&#x548C;task2&#xFF0C;task1&#x91CC;&#x6709;A(activity)&#x662F;singleTask&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#xFF0C;task2&#x6CA1;&#x6709;A&#x3002;&#x73B0;&#x5728;task2&#x91CC;&#x7684;&#x4E00;&#x4E2A;acitivity&#x53BB;&#x542F;&#x52A8;A&#xFF0C;&#x8FD9;&#x65F6;&#x7CFB;&#x7EDF;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;A&#x653E;&#x5230;task2&#x7684;&#x6808;&#x9876;&#xFF0C;&#x4E0D;&#x4F1A;&#x53BB;&#x91CD;&#x7528;task1&#x91CC;&#x9762;&#x7684;A&#x3002;&#x5982;&#x679C;&#x662F;task1&#x91CC;&#x9762;&#x7684;activity&#x53BB;&#x542F;&#x52A8;A&#xFF0C;&#x90A3;&#x4E48;A&#x4F1A;&#x88AB;&#x91CD;&#x7528;&#x6267;&#x884C;onNewIntent&#x548C;onResume&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="singleInstance"><a href="#singleInstance" class="headerlink" title="singleInstance"></a>singleInstance</h3><p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x52A0;&#x5F3A;&#x7248;&#x672C;&#x7684;singleTask&#xFF0C;&#x5B83;&#x4F1A;&#x5355;&#x72EC;&#x7684;&#x8FD0;&#x884C;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x4EFB;&#x52A1;&#x6808;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x6808;&#x4E2D;&#x53EA;&#x6709;&#x5B83;&#x3002;&#x3002;&#x3002;&#xFF08;&#x9738;&#x9053;&#x4E0D;&#xFF01;&#xFF01;&#xFF01;&#xFF09;&#x3002; &#x5355;&#x4E00;&#x5B9E;&#x4F8B;&#xFF0C;&#x6574;&#x4E2A;&#x624B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5B58;&#x5728;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5E94;&#x7528;&#x53BB;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;activity&#x5171;&#x4EAB; &#x516C;&#x7528;&#x7684;&#x540C;&#x4E00;&#x4E2A;activity&#x3002;&#x7531;&#x4E8E;&#x6808;&#x5185;&#x590D;&#x7528;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;activity&#x4F1A;&#x4E00;&#x76F4;&#x88AB;&#x590D;&#x7528;&#xFF0C;&#x76F4;&#x5230;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x6808;&#x88AB;&#x7CFB;&#x7EDF;&#x9500;&#x6BC1;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x5730;&#x65B9;&#x8DDF;singleTask&#x4E00;&#x6837;&#x3002;&#x5C31;&#x4E0D;&#x591A;&#x505A;&#x4ECB;&#x7ECD;&#x4E86;&#x3002;<br>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x547C;&#x53EB;&#x6765;&#x7535;&#x754C;&#x9762; InCallScreen</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x9ED8;&#x8BA4;</th>
+<th>&#x6E05;&#x9664;&#x5728;&#x81EA;&#x5DF1;&#x4E0A;&#x9762;&#x7684;activity</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>standard</td>
+<td>&#x662F;</td>
+<td>&#x5426;</td>
+<td></td>
+</tr>
+<tr>
+<td>singleTop</td>
+<td>&#x5426;</td>
+<td>&#x5426;</td>
+<td></td>
+</tr>
+<tr>
+<td>singleTask</td>
+<td>&#x5426;</td>
+<td>&#x662F;</td>
+<td></td>
+</tr>
+<tr>
+<td>singleInstance</td>
+<td>&#x5426;</td>
+<td>&#x662F;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-08-21T15:03:16.270Z" itemprop="datePublished">2017-08-21</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/安卓-学习-笔记/">安卓,学习,笔记</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/09/21/java动态代理/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    java动态代理
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/08/15/android消息机制/" class="ui tiny button">
+                    
+                    android消息机制
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#standard"><span>standard</span></a></li><li><a href="#singleTop"><span>singleTop</span></a></li><li><a href="#singleTask"><span>singleTask</span></a></li><li><a href="#singleInstance"><span>singleInstance</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2018 <a href="/">陈华榕</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
